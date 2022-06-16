@@ -9,9 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var firstLight: UIView!
+    @IBOutlet var startButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        firstLight.layer.cornerRadius = 63
+        
     }
 
 
