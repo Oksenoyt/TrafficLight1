@@ -9,41 +9,47 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var firstLight: UIView!
-    @IBOutlet var secondLight: UIView!
-    @IBOutlet var thirdLight: UIView!
+    @IBOutlet var redLight: UIView!
+    @IBOutlet var yellowLight: UIView!
+    @IBOutlet var greenLight: UIView!
     @IBOutlet var startButton: UIButton!
     
-    var firstStart = true
+    var activeLight = "none"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let cornerRadius = firstLight.frame.size.height / 2
+        let cornerRadius = redLight.frame.size.height / 2
         
-        firstLight.layer.cornerRadius = cornerRadius
-        secondLight.layer.cornerRadius = cornerRadius
-        thirdLight.layer.cornerRadius = cornerRadius
+        redLight.layer.cornerRadius = cornerRadius
+        yellowLight.layer.cornerRadius = cornerRadius
+        greenLight.layer.cornerRadius = cornerRadius
         startButton.layer.cornerRadius = 10
         
-        firstLight.alpha = 0.2
-        secondLight.alpha = 0.2
-        thirdLight.alpha = 0.2
+        redLight.alpha = 0.2
+        yellowLight.alpha = 0.2
+        greenLight.alpha = 0.2
     }
     
     @IBAction func startButtonTapped() {
-        if firstStart {
-            firstStart = false
+        switch activeLight {
+        case "red":
+            redLight.alpha = 0.2
+            yellowLight.alpha = 1
+            activeLight = "yellow"
+            break
+        case "yellow":
+            yellowLight.alpha = 0.2
+            greenLight.alpha = 1
+            activeLight = "green"
+            break
+        case "green":
+            greenLight.alpha = 0.2
+            redLight.alpha = 1
+            activeLight = "red"
+        default:
+            activeLight = "red"
+            redLight.alpha = 1
             startButton.setTitle("Next", for: .normal)
-        }
-        if firstLight.alpha == 1 {
-            firstLight.alpha = 0.2
-            secondLight.alpha = 1
-        } else if secondLight.alpha == 1 {
-            secondLight.alpha = 0.2
-            thirdLight.alpha = 1
-        } else {
-            thirdLight.alpha = 0.2
-            firstLight.alpha = 1
         }
     }
     
