@@ -36,12 +36,10 @@ class ViewController: UIViewController {
             redLight.alpha = 0.2
             yellowLight.alpha = 1
             activeLight = "yellow"
-            break
         case "yellow":
             yellowLight.alpha = 0.2
             greenLight.alpha = 1
             activeLight = "green"
-            break
         case "green":
             greenLight.alpha = 0.2
             redLight.alpha = 1
