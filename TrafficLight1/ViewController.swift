@@ -19,11 +19,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let cornerRadius = firstLight.frame.size.height / 2
-        print(cornerRadius)
+        
         firstLight.layer.cornerRadius = cornerRadius
         secondLight.layer.cornerRadius = cornerRadius
         thirdLight.layer.cornerRadius = cornerRadius
         startButton.layer.cornerRadius = 10
+        
         firstLight.alpha = 0.2
         secondLight.alpha = 0.2
         thirdLight.alpha = 0.2
@@ -33,7 +34,6 @@ class ViewController: UIViewController {
         if firstStart {
             firstStart = false
             startButton.setTitle("Next", for: .normal)
-           // firstLight.alpha = 1
         }
         if firstLight.alpha == 1 {
             firstLight.alpha = 0.2
