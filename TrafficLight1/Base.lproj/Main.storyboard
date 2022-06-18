@@ -52,7 +52,7 @@
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="NXL-9C-fB2"/>
-                                    <constraint firstAttribute="width" constant="120" id="qBd-6q-p6d"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="qBd-6q-p6d"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
